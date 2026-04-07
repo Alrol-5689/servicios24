@@ -1,10 +1,7 @@
 package tiendaDeportes.model;
 
-import lombok.Getter;
-
 import java.util.concurrent.Semaphore;
 
-@Getter
 public class Caja {
     private final Long id;
     private double recaudado;
@@ -26,5 +23,9 @@ public class Caja {
 
     public synchronized void sumarImporte(double importe) {
         this.recaudado += importe;
+    }
+
+    public double getRecaudado() {
+        return recaudado;
     }
 }

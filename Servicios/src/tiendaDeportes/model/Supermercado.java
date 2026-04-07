@@ -1,10 +1,7 @@
 package tiendaDeportes.model;
 
-import lombok.Data;
-
 import java.util.concurrent.Semaphore;
 
-@Data
 public class Supermercado {
     private Semaphore aforo = new Semaphore(15);
     private Caja caja1 = new Caja(1L);
@@ -60,4 +57,8 @@ public class Supermercado {
     public double getTotalRecaudado() {
         return caja1.getRecaudado() + caja2.getRecaudado() + caja3.getRecaudado();
     }
+
+    public Caja getCaja1() {return caja1;}
+    public Caja getCaja2() {return caja2;}
+    public Caja getCaja3() {return caja3;}
 }
